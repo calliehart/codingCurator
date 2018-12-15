@@ -1,0 +1,13 @@
+.column.is-one-third
+    .box.bookmarkBox
+        .level
+            .level-left
+                h5.bookmarkTitle= bookmark.bookmark_name
+            .level-right
+                button.button.is-primary.level-item#deleteBtn(onclick=`deleteBookmark(${bookmark.bkmk_id})`)
+                    i(class="fas fa-trash fa-sm")
+        #notesDiv            
+            p.bookmarkNotes= bookmark.notes
+        .span(style="text-align:center;")
+            a.bookmarkWebsiteLink(href=bookmark.href) Go to Site
+        p.bookmarkCategory= bookmark.category

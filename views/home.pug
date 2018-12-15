@@ -1,0 +1,34 @@
+//- We can have partials with 'include'.
+//- Here we include header.pug from the includes folder.
+include includes/header.pug
+div.content
+    div.logoHeading
+        img#logo(
+            src="/images/logo.svg"
+            )
+
+        //- Variables. Note: title and message come from server.js
+        //-h1.title= title
+        br
+        p.subtitle= message
+
+//- Attributes go inside parenthesis
+//- Indentation is key
+br
+div.formContainer.container
+    form(method="POST" action="/login")
+        .field
+            .control
+                label(for="username") Username
+                input.input(type="input" name="username" placeholder="Enter username")
+        .field
+            .control
+                label(for="password") Password
+                input.input(type="password" name="password" placeholder="Enter password")
+        button.button.is-dark(class="btn-hover color-1" style="margin-left:10px;color: #949494a8;font-family: 'Comfortaa', cursive;" type="submit") Submit
+        br
+        a(href="/register") Create an account
+
+footer.footer
+    content.has-text-centered()
+        p Curator
